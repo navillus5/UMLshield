@@ -1,0 +1,32 @@
+/*
+ * UML shield
+ * Test code for array of LED's connected to digital I/O pins
+ * 2, 3, 4, 5, and 6
+ * 
+ * Board configuration: Jumper JP3 closed
+ */
+
+// Create a six element integer array for the pin numbers
+
+int ledArray[6]={2,3,4,5,6,7};
+
+// Use a For loop in setup to set all the led pins to output
+
+void setup() {
+  for (int i = 0; i < 6; i++){
+    pinMode(ledArray[i],OUTPUT);
+    }
+}
+
+
+void loop() {
+
+// Use a For loop to blink each LED  
+
+  for(int i = 0; i < 6; i++){
+    digitalWrite(ledArray[i],HIGH);
+    delay(100);
+    digitalWrite(ledArray[i],LOW);
+    delay(100);
+  }
+}
