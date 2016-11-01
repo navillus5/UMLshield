@@ -1,0 +1,36 @@
+int leftButton = 6;
+int leftIndicator = 3;
+int leftState = 1;
+
+int rightButton = 2;
+int rightIndicator = 4;
+int rightState = 1;
+
+void setup() {
+  pinMode(leftButton, INPUT);
+  pinMode(rightButton, INPUT);
+
+  pinMode(leftIndicator, OUTPUT)
+  pinMode(rightIndicator, OUTPUT)
+
+}
+
+void loop() {
+  leftState = digitalRead(leftButton);
+  rightState = digitalRead(rightButton):
+
+  if(leftState == 0){
+    digitalWrite(leftIndicator,HIGH);
+  }
+  else{
+    digitalWrite(leftIndicator,LOW);
+  }
+
+  if(rightState == 0){
+    digitalWrite(rightIndicator,HIGH);
+  }
+  else{
+    digitalWrite(rightIndicator,LOW);
+  }
+
+}
