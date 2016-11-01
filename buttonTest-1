@@ -10,14 +10,14 @@ void setup() {
   pinMode(leftButton, INPUT);
   pinMode(rightButton, INPUT);
 
-  pinMode(leftIndicator, OUTPUT)
-  pinMode(rightIndicator, OUTPUT)
+  pinMode(leftIndicator, OUTPUT);
+  pinMode(rightIndicator, OUTPUT);
 
 }
 
 void loop() {
   leftState = digitalRead(leftButton);
-  rightState = digitalRead(rightButton):
+  rightState = digitalRead(rightButton);
 
   if(leftState == 0){
     digitalWrite(leftIndicator,HIGH);
