@@ -1,10 +1,10 @@
 int leftButton = 6;
 int leftIndicator = 3;
-int leftState = 1;
+int leftState = 0;
 
 int rightButton = 2;
 int rightIndicator = 4;
-int rightState = 1;
+int rightState = 0;
 
 void setup() {
   pinMode(leftButton, INPUT);
@@ -19,14 +19,14 @@ void loop() {
   leftState = digitalRead(leftButton);
   rightState = digitalRead(rightButton);
 
-  if(leftState == 0){
+  if(leftState ==10){
     digitalWrite(leftIndicator,HIGH);
   }
   else{
     digitalWrite(leftIndicator,LOW);
   }
 
-  if(rightState == 0){
+  if(rightState == 1){
     digitalWrite(rightIndicator,HIGH);
   }
   else{
