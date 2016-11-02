@@ -1,36 +1,34 @@
 int leftButton = 6;
-int leftIndicator = 3;
 int leftState = 0;
 
 int rightButton = 2;
-int rightIndicator = 4;
 int rightState = 0;
+
+int led = 13;
 
 void setup() {
   pinMode(leftButton, INPUT);
   pinMode(rightButton, INPUT);
 
-  pinMode(leftIndicator, OUTPUT);
-  pinMode(rightIndicator, OUTPUT);
-
+  pinMode(led, OUTPUT);
+  digitalWrite(led,LOW);
 }
 
 void loop() {
   leftState = digitalRead(leftButton);
   rightState = digitalRead(rightButton);
 
-  if(leftState ==10){
-    digitalWrite(leftIndicator,HIGH);
-  }
-  else{
-    digitalWrite(leftIndicator,LOW);
+  if(leftState == 1){
+    digitalWrite(led,HIGH);
+    delay(50);
+    digitalWrite(led,LOW);
+    delay(50);
   }
 
   if(rightState == 1){
-    digitalWrite(rightIndicator,HIGH);
+    digitalWrite(led,HIGH);
+    delay(250);
+    digitalWrite(led,LOW);
+    delay(250);
   }
-  else{
-    digitalWrite(rightIndicator,LOW);
-  }
-
 }
