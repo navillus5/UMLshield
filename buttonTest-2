@@ -1,0 +1,48 @@
+int leftButton = 6;
+int leftState = 0;
+
+int rightButton = 2;
+int rightState = 0;
+
+int led = 13;
+
+void setup() {
+  pinMode(leftButton, INPUT);
+  pinMode(rightButton, INPUT);
+
+  pinMode(led, OUTPUT);
+  digitalWrite(led,LOW);
+}
+
+void loop() {
+  leftState = digitalRead(leftButton);
+  rightState = digitalRead(rightButton);
+
+  if(leftState == 1 && rightState == 0){
+    digitalWrite(led,HIGH);
+    delay(50);
+    digitalWrite(led,LOW);
+    delay(50);
+  }
+
+  if(rightState == 1 && leftState == 0){
+    digitalWrite(led,HIGH);
+    delay(250);
+    digitalWrite(led,LOW);
+    delay(250);
+  }
+
+  if(rightState == 1 && leftState == 1){
+    digitalWrite(led,HIGH);
+    delay(500);
+    digitalWrite(led,LOW);
+    delay(500);
+  }
+
+  if(rightState == 0 && leftState == 0){
+    digitalWrite(led,HIGH);
+    delay(1000);
+    digitalWrite(led,LOW);
+    delay(1000);
+  }
+}
