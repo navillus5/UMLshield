@@ -1,0 +1,16 @@
+int led = 2;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(led,OUTPUT);
+}
+
+void loop() {
+  int potVal = analogRead(A0);
+  int rate = map(potVal,0,1032,0,5000);
+  Serial.println(rate);
+  digitalWrite(led, HIGH);
+  delay(rate);
+  digitalWrite(led, LOW);
+  delay(rate);
+}
